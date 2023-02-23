@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="weather_desc_0">Clear sky</string>
+    <string name="weather_desc_1">Mainly clear</string>
+    <string name="weather_desc_2">Partly cloudy</string>
+    <string name="weather_desc_3">Overcast</string>
+    <string name="weather_desc_45">Fog</string>
+    <string name="weather_desc_48">Depositing rime fog</string>
+    <string name="weather_desc_51">Drizzle: Light intensity</string>
+    <string name="weather_desc_53">Drizzle: Moderate intensity</string>
+    <string name="weather_desc_55">Drizzle: Dense intensity</string>
+    <string name="weather_desc_56">Freezing Drizzle: Light intensity</string>
+    <string name="weather_desc_57">Freezing Drizzle: Dense intensity</string>
+    <string name="weather_desc_61">Rain: Slight intensity</string>
+    <string name="weather_desc_63">Rain: Moderate intensity</string>
+    <string name="weather_desc_65">Rain: Heavy intensity</string>
+    <string name="weather_desc_66">Freezing Rain: Light intensity</string>
+    <string name="weather_desc_67">Freezing Rain: Heavy intensity</string>
+    <string name="weather_desc_71">Snow fall: Slight intensity</string>
+    <string name="weather_desc_73">Snow fall: Moderate intensity</string>
+    <string name="weather_desc_75">Snow fall: Heavy intensity</string>
+    <string name="weather_desc_77">Snow grains</string>
+    <string name="weather_desc_80">Rain showers: Slight intensity</string>
+    <string name="weather_desc_81">Rain showers: Moderate intensity</string>
+    <string name="weather_desc_82">Rain showers: Violent intensity</string>
+    <string name="weather_desc_85">Snow showers: Slight intensity</string>
+    <string name="weather_desc_86">Snow showers: Heavy intensity</string>
+    <string name="weather_desc_95">Thunderstorm: Slight or moderate</string>
+    <string name="weather_desc_96">Thunderstorm with slight hail</string>
+    <string name="weather_desc_99">Thunderstorm with heavy hail</string>
+</resources>
