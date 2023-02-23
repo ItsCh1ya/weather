@@ -35,4 +35,19 @@ class WMOCodes(context: Context) {
         96 to context.getString(R.string.weather_desc_96),
         99 to context.getString(R.string.weather_desc_99)
     )
+    fun getWeatherImageResource(weatherCode: Int, isDayTime: Boolean): Int {
+        return when (weatherCode) {
+            0 -> if (isDayTime) R.drawable.clear_day else R.drawable.clear_night
+            1 -> R.drawable.clear_night
+            2 -> if (isDayTime) R.drawable.cloudy_day else R.drawable.clear_night
+            3 -> R.drawable.cloudy_night
+            45, 48 -> R.drawable.foggy
+            51, 53, 55 -> R.drawable.rain
+            56, 57, 66, 67, 77 -> R.drawable.sleet
+            61, 63, 65, 71, 73, 75, 85, 86 -> R.drawable.snow
+            80, 81 -> R.drawable.rain
+            82, 95, 96, 99 -> R.drawable.thunder
+            else -> if (isDayTime) R.drawable.clear_day else R.drawable.clear_night // default image
+        }
+    }
 }
