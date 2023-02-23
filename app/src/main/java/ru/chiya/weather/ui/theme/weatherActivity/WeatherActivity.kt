@@ -7,10 +7,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import ru.chiya.weather.ui.theme.WeatherTheme
+import ru.chiya.weather.ui.theme.utils.GetWeather
 import ru.chiya.weather.ui.theme.utils.LocationDetails
 
 class WeatherActivity : ComponentActivity() {
@@ -29,7 +28,7 @@ class WeatherActivity : ComponentActivity() {
                     val locationDetails = LocationDetails(
                         locationLatitude, locationLongitude
                     )
-
+                    val weather = GetWeather(locationDetails)
                 }
             }
         }
