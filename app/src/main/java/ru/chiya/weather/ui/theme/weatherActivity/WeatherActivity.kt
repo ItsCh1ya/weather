@@ -1,23 +1,20 @@
 package ru.chiya.weather.ui.theme.weatherActivity
 
 import android.os.Bundle
-import android.provider.CalendarContract.Colors
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import ru.chiya.weather.ui.theme.*
-import ru.chiya.weather.ui.theme.WeatherTheme
+import ru.chiya.weather.ui.theme.main.DailyWeatherList
 import ru.chiya.weather.ui.theme.main.Temperature
+import ru.chiya.weather.ui.theme.main.WeatherImageLarge
 import ru.chiya.weather.ui.theme.main.WeatherShortDesc
 import ru.chiya.weather.ui.theme.utils.GetWeather
 import ru.chiya.weather.ui.theme.utils.LocationDetails
@@ -64,27 +61,16 @@ fun WeatherScreen(weather: WeatherApiData) {
         else -> NightGradient
     }
 
-    Column(modifier = Modifier.background(brush = gradient)) {
+    Column(modifier = Modifier.background(brush = gradient), verticalArrangement = Arrangement.SpaceBetween) {
         val wmoCodes = WMOCodes(LocalContext.current)
         val wmoCodeDesc = wmoCodes.weatherCodesMap[weather.current_weather.weathercode]
-        Spacer(modifier = Modifier.height(50.dp))
-        Temperature(temperature = weather.current_weather.temperature.toString())
-        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
-            Image(
-                modifier = Modifier
-                    .width(300.dp)
-                    .height(300.dp)
-                    .padding(top = 10.dp),
-                painter = painterResource(
-                    id = wmoCodes.getWeatherImageResource(
-                        weather.current_weather.weathercode,
-                        isDayTime
-                    )
-                ),
-                contentDescription = "ImageDesc",
-                contentScale = ContentScale.Fit
-            )
+        Column(modifier = Modifier.padding(top = 30.dp)) {
+            Temperature(temperature = weather.current_weather.temperature.toString())
+            WeatherImageLarge(wmoCodes, weather, isDayTime)
+            WeatherShortDesc(description = wmoCodeDesc!!)
         }
-        WeatherShortDesc(description = wmoCodeDesc!!)
+        Column(modifier = Modifier.padding(bottom = 30.dp)) {
+            DailyWeatherList(wmoCodes, weather, isDayTime)
+        }
     }
 }

@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.LocationServices
@@ -41,7 +42,7 @@ class MainActivity : ComponentActivity() {
                     val intent = Intent(this, WeatherActivity::class.java)
                     intent.putExtra("latitude", location.latitude)
                     intent.putExtra("longitude", location.longitude)
-                    this.startActivity(intent)
+//                    this.startActivity(intent)
                 }
             }
 
@@ -58,5 +59,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Loading(){
-    Text(text = "Загрузка, пожалуйста подождите")
+    Box(contentAlignment = Alignment.Center){
+        Text(text = "Загрузка, пожалуйста подождите")
+    }
 }
