@@ -35,6 +35,7 @@ class WMOCodes(context: Context) {
         96 to context.getString(R.string.weather_desc_96),
         99 to context.getString(R.string.weather_desc_99)
     )
+
     fun getWeatherImageResource(weatherCode: Int, isDayTime: Boolean): Int {
         return when (weatherCode) {
             0 -> if (isDayTime) R.drawable.clear_day else R.drawable.clear_night

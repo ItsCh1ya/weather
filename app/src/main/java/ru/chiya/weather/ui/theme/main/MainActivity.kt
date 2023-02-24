@@ -8,7 +8,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -16,8 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.LocationServices
-import ru.chiya.weather.ui.theme.*
-import ru.chiya.weather.ui.theme.utils.LocationDetails
+import ru.chiya.weather.ui.theme.WeatherTheme
 import ru.chiya.weather.ui.theme.weatherActivity.WeatherActivity
 
 

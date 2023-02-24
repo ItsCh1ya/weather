@@ -16,8 +16,14 @@ fun GetWeather(locationDetails: LocationDetails): WeatherApiData {
         ThreadPolicy.Builder().permitAll().build() // TODO: rework without this, may cause freezes
     StrictMode.setThreadPolicy(policy)
 
-    val API_URL =
-        "https://api.open-meteo.com/v1/forecast?latitude=${locationDetails.latitude}&longitude=${locationDetails.longitude}&daily=weathercode,apparent_temperature_max&current_weather=true&timeformat=unixtime&timezone=Europe%2FMoscow"
+    val API_URL = "https://api.open-meteo.com/v1/forecast?" +
+            "latitude=${locationDetails.latitude}&" +
+            "longitude=${locationDetails.longitude}&" +
+            "daily=weathercode,apparent_temperature_max&" +
+            "current_weather=true&" +
+            "timeformat=unixtime&" +
+            "timezone=Europe%2FMoscow"
+    
     val apiResponse = URL(API_URL).readText()
     return ParseJson(apiResponse)
 }

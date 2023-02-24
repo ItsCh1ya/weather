@@ -19,7 +19,7 @@ import ru.chiya.weather.ui.theme.utils.weatherApiData.WMOCodes
 import ru.chiya.weather.ui.theme.utils.weatherApiData.WeatherApiData
 
 @Composable
-fun Temperature(temperature: String){
+fun Temperature(temperature: String) {
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
         Text(text = "${temperature}°", style = MaterialTheme.typography.h1)
     }

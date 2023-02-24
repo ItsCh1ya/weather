@@ -47,7 +47,6 @@ android {
 }
 
 dependencies {
-    implementation 'com.patloew.colocation:colocation:1.1.1'
     implementation 'com.google.android.gms:play-services-location:21.0.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1'
     implementation "com.google.accompanist:accompanist-systemuicontroller:0.28.0"

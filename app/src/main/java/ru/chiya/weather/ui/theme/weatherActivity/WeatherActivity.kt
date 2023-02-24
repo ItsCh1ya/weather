@@ -61,7 +61,10 @@ fun WeatherScreen(weather: WeatherApiData) {
         else -> NightGradient
     }
 
-    Column(modifier = Modifier.background(brush = gradient), verticalArrangement = Arrangement.SpaceBetween) {
+    Column(
+        modifier = Modifier.background(brush = gradient),
+        verticalArrangement = Arrangement.SpaceBetween
+    ) {
         val wmoCodes = WMOCodes(LocalContext.current)
         val wmoCodeDesc = wmoCodes.weatherCodesMap[weather.current_weather.weathercode]
         Column(modifier = Modifier.padding(top = 30.dp)) {
