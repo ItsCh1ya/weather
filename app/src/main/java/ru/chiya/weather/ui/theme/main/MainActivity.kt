@@ -42,7 +42,7 @@ class MainActivity : ComponentActivity() {
                     val intent = Intent(this, WeatherActivity::class.java)
                     intent.putExtra("latitude", location.latitude)
                     intent.putExtra("longitude", location.longitude)
-//                    this.startActivity(intent)
+                    this.startActivity(intent)
                 }
             }
 
