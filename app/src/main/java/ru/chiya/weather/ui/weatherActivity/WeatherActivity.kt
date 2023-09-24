@@ -7,10 +7,16 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import ru.chiya.weather.ui.theme.*
 import ru.chiya.weather.ui.theme.main.DailyWeatherList
 import ru.chiya.weather.ui.theme.main.Temperature
@@ -25,6 +31,18 @@ import java.util.*
 class WeatherActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val weather = mutableStateOf<WeatherApiData?>(null)
+
+        lifecycleScope.launch(Dispatchers.IO) {
+            val bundle = intent.extras!!
+            val locationLatitude = bundle.getDouble("latitude")
+            val locationLongitude = bundle.getDouble("longitude")
+            val locationDetails = LocationDetails(
+                locationLatitude, locationLongitude
+            )
+            weather.value = GetWeather(locationDetails)
+        }
         setContent {
             WeatherTheme {
                 // A surface container using the 'background' color from the theme
@@ -32,14 +50,11 @@ class WeatherActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    val bundle = intent.extras!!
-                    val locationLatitude = bundle.getDouble("latitude")
-                    val locationLongitude = bundle.getDouble("longitude")
-                    val locationDetails = LocationDetails(
-                        locationLatitude, locationLongitude
-                    )
-                    val weather = GetWeather(locationDetails)
-                    WeatherScreen(weather)
+                    if (weather.value != null) {
+                        WeatherScreen(weather = weather.value!!)
+                    } else {
+                        Text(text = "Loading weather, please wait...")
+                    }
                 }
             }
         }
