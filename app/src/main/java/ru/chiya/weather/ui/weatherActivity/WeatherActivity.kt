@@ -1,4 +1,4 @@
-package ru.chiya.weather.ui.theme.weatherActivity
+package ru.chiya.weather.ui.weatherActivity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -16,10 +16,10 @@ import ru.chiya.weather.ui.theme.main.DailyWeatherList
 import ru.chiya.weather.ui.theme.main.Temperature
 import ru.chiya.weather.ui.theme.main.WeatherImageLarge
 import ru.chiya.weather.ui.theme.main.WeatherShortDesc
-import ru.chiya.weather.ui.theme.utils.GetWeather
-import ru.chiya.weather.ui.theme.utils.LocationDetails
-import ru.chiya.weather.ui.theme.utils.weatherApiData.WMOCodes
-import ru.chiya.weather.ui.theme.utils.weatherApiData.WeatherApiData
+import ru.chiya.weather.utils.GetWeather
+import ru.chiya.weather.utils.LocationDetails
+import ru.chiya.weather.utils.weatherApiData.WMOCodes
+import ru.chiya.weather.utils.weatherApiData.WeatherApiData
 import java.util.*
 
 class WeatherActivity : ComponentActivity() {

@@ -1,4 +1,4 @@
-package ru.chiya.weather.ui.theme.utils.weatherApiData
+package ru.chiya.weather.utils.weatherApiData
 
 data class CurrentWeather(
     val temperature: Double,

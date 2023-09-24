@@ -15,8 +15,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import ru.chiya.weather.ui.theme.utils.weatherApiData.WMOCodes
-import ru.chiya.weather.ui.theme.utils.weatherApiData.WeatherApiData
+import ru.chiya.weather.utils.weatherApiData.WMOCodes
+import ru.chiya.weather.utils.weatherApiData.WeatherApiData
 
 @Composable
 fun Temperature(temperature: String) {

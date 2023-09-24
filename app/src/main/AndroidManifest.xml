@@ -19,7 +19,7 @@
         android:theme="@style/Theme.Weather"
         tools:targetApi="31">
         <activity
-            android:name=".ui.theme.weatherActivity.WeatherActivity"
+            android:name=".ui.weatherActivity.WeatherActivity"
             android:exported="true"
             android:label="@string/title_activity_weather"
             android:theme="@style/Theme.Weather">
@@ -28,7 +28,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.theme.main.MainActivity"
+            android:name=".main.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Weather">
             <intent-filter>

@@ -1,21 +1,17 @@
-package ru.chiya.weather.ui.theme.utils
+package ru.chiya.weather.utils
 
 import android.os.StrictMode
 import android.os.StrictMode.ThreadPolicy
 import org.json.JSONObject
-import ru.chiya.weather.ui.theme.utils.weatherApiData.CurrentWeather
-import ru.chiya.weather.ui.theme.utils.weatherApiData.Daily
-import ru.chiya.weather.ui.theme.utils.weatherApiData.WeatherApiData
+import ru.chiya.weather.utils.weatherApiData.CurrentWeather
+import ru.chiya.weather.utils.weatherApiData.Daily
+import ru.chiya.weather.utils.weatherApiData.WeatherApiData
 import java.net.URL
 import java.text.SimpleDateFormat
 import java.util.*
 
 
 fun GetWeather(locationDetails: LocationDetails): WeatherApiData {
-    val policy =
-        ThreadPolicy.Builder().permitAll().build() // TODO: rework without this, may cause freezes
-    StrictMode.setThreadPolicy(policy)
-
     val API_URL = "https://api.open-meteo.com/v1/forecast?" +
             "latitude=${locationDetails.latitude}&" +
             "longitude=${locationDetails.longitude}&" +

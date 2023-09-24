@@ -1,4 +1,4 @@
-package ru.chiya.weather.ui.theme.main
+package ru.chiya.weather.main
 
 import android.Manifest
 import android.content.Intent
@@ -18,7 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.LocationServices
 import ru.chiya.weather.ui.theme.WeatherTheme
-import ru.chiya.weather.ui.theme.weatherActivity.WeatherActivity
+import ru.chiya.weather.ui.weatherActivity.WeatherActivity
 
 
 class MainActivity : ComponentActivity() {

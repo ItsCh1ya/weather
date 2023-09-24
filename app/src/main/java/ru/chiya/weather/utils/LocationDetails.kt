@@ -1,4 +1,4 @@
-package ru.chiya.weather.ui.theme.utils
+package ru.chiya.weather.utils
 
 data class LocationDetails(
     val latitude: Double,
